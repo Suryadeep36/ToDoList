@@ -17,15 +17,17 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-async function runWeb(){
-  try {
-  await mongoose.connect('mongodb+srv://Suryadeep31:JWJv1t4pwC5HM4fa@todolist.jozng2g.mongodb.net/?retryWrites=true&w=majority');
-  } catch (error) {
-  console.log(error);
-  }
-}
-  runWeb();
 
+mongoose.connect(
+    'mongodb+srv://Suryadeep31:JWJv1t4pwC5HM4fa@todolist.jozng2g.mongodb.net/?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    function (err, res) {
+        try {
+            console.log('Connected to Database');
+        } catch (err) {
+            throw err;
+        }
+    });
 const itemSchema = new mongoose.Schema({
   name:String
 });
