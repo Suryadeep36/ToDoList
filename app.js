@@ -20,7 +20,7 @@ app.use(express.static("public"));
 try {
   await mongoose.connect('mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority');
 } catch (error) {
-  handleError(error);
+  console.log(error);
 }
 const itemSchema = new mongoose.Schema({
   name:String
