@@ -21,7 +21,7 @@ app.use(express.static("public"));
 async function connectWeb(){
   await mongoose.connect("mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority");
 }
-setTimeout(connectWeb, 10001);
+connectWeb();
 
 const itemSchema = new mongoose.Schema({
   name:String
