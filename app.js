@@ -17,8 +17,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority").
-  catch(error => handleError(error));
+try {
+  await mongoose.connect('mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority');
+} catch (error) {
+  handleError(error);
+}
 const itemSchema = new mongoose.Schema({
   name:String
 });
