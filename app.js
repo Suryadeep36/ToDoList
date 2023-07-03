@@ -18,16 +18,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect(
-    'mongodb+srv://Suryadeep31:JWJv1t4pwC5HM4fa@todolist.jozng2g.mongodb.net/?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    function (err, res) {
-        try {
-            console.log('Connected to Database');
-        } catch (err) {
-            throw err;
-        }
-    });
+mongoose.connect('mongodb+srv://Suryadeep31:JWJv1t4pwC5HM4fa@todolist.jozng2g.mongodb.net/?retryWrites=true&w=majority');
+
 const itemSchema = new mongoose.Schema({
   name:String
 });
