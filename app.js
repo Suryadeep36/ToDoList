@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 async function runWeb(){
   try {
-  await mongoose.connect('mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority');
+  await mongoose.connect('mongodb+srv://Suryadeep31:JWJv1t4pwC5HM4fa@todolist.jozng2g.mongodb.net/?retryWrites=true&w=majority');
   } catch (error) {
   console.log(error);
   }
