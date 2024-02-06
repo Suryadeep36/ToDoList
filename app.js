@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 
 async function connectWeb(){
-  await mongoose.connect("mongodb+srv://Suryadeep31:i2lyQBMv0eAeZowf@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority");
+  await mongoose.connect("mongodb+srv://Suryadeep31:"+process.env.PASSWORD+"@fruitsreviews.zztdnvq.mongodb.net/?retryWrites=true&w=majority");
 }
 connectWeb();
 
